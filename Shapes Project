@@ -1,0 +1,61 @@
+#Initialization
+import turtle
+import random
+max=turtle.Turtle()
+turtle.colormode(255)
+max.speed(5)
+
+#Functions
+def randomdot():
+    r=random.randint(0,255)
+    b=random.randint(0,255)
+    g=random.randint(0,255)
+    s=random.randint(50,200)
+    max.color(r,b,g)
+    max.begin_fill()
+    max.circle(s)
+    max.end_fill()
+
+def randomsquare():
+    r=random.randint(0,255)
+    b=random.randint(0,255)
+    g=random.randint(0,255)
+    s=random.randint(50,200)
+    max.color(r,g,b)
+    max.begin_fill()
+    for i in range(4):
+        max.right(90)
+        max.forward(s)
+    max.end_fill()
+
+def randomtriangle():
+    r=random.randint(0,255)
+    b=random.randint(0,255)
+    g=random.randint(0,255)
+    s=random.randint(50,200)
+    max.color(r,g,b)
+    max.begin_fill()
+    for i in range (3):
+        max.forward(s)
+        max.left(120)
+    max.end_fill()
+  
+def move():
+    max.penup()
+    max.goto(x,y)
+    max.pendown()
+   
+#Main
+for i in range(10):
+    x=random.randint(-250,250)
+    y=random.randint(-250,250)
+    move()
+    randomdot()
+    x=random.randint(-250,250)
+    y=random.randint(-250,250)
+    move()
+    randomsquare()
+    x=random.randint(-250,250)
+    y=random.randint(-250,250)
+    move()
+    randomtriangle()
